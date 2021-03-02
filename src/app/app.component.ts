@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { animationFrameScheduler } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'data-binding-app';
+  numberOfTimes:number = 0;
+  hidden=false;
+
+  count(){
+    this.numberOfTimes++;
+  }
+
+  show() {
+    if (this.hidden == true) {
+      this.hidden = false;
+    }
+    else{
+      this.hidden = true;
+    }
+    
+  }
 }
